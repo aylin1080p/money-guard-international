@@ -1,58 +1,59 @@
 import './css/styles.css';
+import iziToast from 'izitoast';
+import SimpleLightbox from 'simplelightbox';
 import { fetchImages } from './js/pixabay-api.js';
-import { createGalleryMarkup, showStatusMessage } from './js/render-functions.js';
+import { renderGallery, showLoader, hideLoader } from './js/render-functions.js';
 
-console.log('main.js loaded');
-console.log('fetchImages:', fetchImages);
-console.log('createGalleryMarkup:', createGalleryMarkup);
-console.log('showStatusMessage:', showStatusMessage);
+const form = document.querySelector('.search-form');
+const gallery = document.querySelector('.gallery');
+const loaderElement = document.querySelector('.loader');
 
-const appMarkup = `
-  <main class="container">
-    <h1 class="title">Image Search</h1>
+let lightbox = new SimpleLightbox('.gallery a', {
+  docClose: true,
+  docLoading: true,
+});
 
-    <form class="search-form" id="search-form">
-      <input
-        class="search-input"
-        type="text"
-        name="search-text"
-        placeholder="Search images..."
-        autocomplete="off"
-      />
-      <button class="search-button" type="submit">Search</button>
-    </form>
-
-    <p class="status-text" id="status-text">
-      Uygulama iskeleti başarıyla yüklendi.
-    </p>
-
-    <ul class="gallery" id="gallery"></ul>
-
-    <button class="load-more" id="load-more" type="button" hidden>
-      Load more
-    </button>
-  </main>
-`;
-
-document.body.insertAdjacentHTML('afterbegin', appMarkup);
-
-const form = document.querySelector('#search-form');
-const statusText = document.querySelector('#status-text');
-const gallery = document.querySelector('#gallery');
-
-form.addEventListener('submit', event => {
+form.addEventListener('submit', async event => {
   event.preventDefault();
 
-  const query = event.currentTarget.elements['search-text'].value.trim();
+  const searchQuery = event.currentTarget.elements['search-text'].value.trim();
 
-  if (!query) {
-    showStatusMessage(statusText, 'Lütfen bir arama kelimesi girin.');
-    gallery.innerHTML = '';
+  if (!searchQuery) {
+    iziToast.warning({
+      title: 'Warning',
+      message: 'Please enter a search query!',
+      position: 'topRight',
+    });
     return;
   }
 
-  showStatusMessage(statusText, `Arama hazır: "${query}"`);
-  gallery.innerHTML = createGalleryMarkup([]);
-});
+  gallery.innerHTML = '';
+  showLoader();
 
-console.log('Page rendered successfully');
+  try {
+    const data = await fetchImages(searchQuery);
+
+    hideLoader();
+
+    if (data.hits.length === 0) {
+      iziToast.error({
+        title: 'Error',
+        message: 'Sorry, there are no images matching your search query. Please try again!',
+        position: 'topRight',
+      });
+      return;
+    }
+
+    renderGallery(data.hits);
+    lightbox.refresh();
+  } catch (error) {
+    hideLoader();
+    iziToast.error({
+      title: 'Error',
+      message: 'Failed to fetch images. Please try again!',
+      position: 'topRight',
+    });
+  }
+
+  form.reset();
+});

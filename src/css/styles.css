@@ -4,85 +4,220 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8;
   color: #212121;
 }
 
-.container {
-  max-width: 900px;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
 }
 
-.title {
-  margin: 0 0 24px;
-  text-align: center;
-  font-size: 32px;
+h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .search-form {
   display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  width: 100%;
   justify-content: center;
-  gap: 12px;
-  margin-bottom: 24px;
+  flex-wrap: wrap;
 }
 
 .search-input {
-  width: 320px;
-  height: 40px;
-  padding: 0 12px;
-  border: 1px solid #808080;
+  padding: 8px 12px;
+  width: 260px;
+  border: 1px solid #ddd;
   border-radius: 4px;
+  font-size: 14px;
   outline: none;
 }
 
-.search-button,
-.load-more {
-  height: 40px;
-  padding: 0 16px;
+.search-input:focus {
+  border-color: #666;
+}
+
+.search-button {
+  padding: 8px 16px;
+  background-color: #4a90e2;
+  color: white;
   border: none;
   border-radius: 4px;
-  background-color: #4e75ff;
-  color: #fff;
+  font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.search-button:hover,
-.load-more:hover {
-  background-color: #6c8cff;
+.search-button:hover {
+  background-color: #357abd;
 }
 
-.status-text {
-  margin: 0 0 24px;
-  text-align: center;
+.search-button:active {
+  background-color: #25518a;
+}
+
+.loader {
+  display: none;
+  margin: 20px 0;
+}
+
+.loader::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4a90e2;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .gallery {
-  list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 16px;
+  width: 100%;
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.gallery-placeholder,
 .gallery-item {
-  min-height: 160px;
-  border: 1px dashed #808080;
-  border-radius: 8px;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 6px rgba(0, 0, 0, 0.24);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-item img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.image-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  background: white;
+  font-size: 12px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-label {
+  font-weight: 600;
+  font-size: 10px;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.info-value {
+  font-weight: 600;
+  color: #212121;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .search-form {
+    gap: 6px;
+  }
+
+  .search-input {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .gallery-item img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .search-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .search-input,
+  .search-button {
+    width: 100%;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+  }
+
+  .gallery-item img {
+    height: 120px;
+  }
+
+  .image-info {
+    padding: 6px;
+    font-size: 11px;
+  }
 }

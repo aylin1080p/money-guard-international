@@ -1,11 +1,32 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GoIT JS HW-11</title>
+    <title>Image Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.1/simple-lightbox.min.css" />
   </head>
   <body>
+    <main>
+      <h1>Image Search</h1>
+
+      <form class="search-form">
+        <input
+          class="search-input"
+          type="text"
+          name="search-text"
+          placeholder="Search images..."
+          autocomplete="off"
+          required
+        />
+        <button class="search-button" type="submit">Search</button>
+      </form>
+
+      <div class="loader"></div>
+
+      <ul class="gallery"></ul>
+    </main>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
