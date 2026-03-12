@@ -2,7 +2,6 @@ export function renderGallery(images) {
   const gallery = document.querySelector('.gallery');
 
   if (!gallery) {
-    console.error('Gallery element not found');
     return;
   }
 
@@ -52,12 +51,12 @@ export function showLoader() {
   const loaderElement = document.querySelector('.loader');
 
   if (!loaderElement) return;
-  loaderElement.style.display = 'block';
+  loaderElement.classList.add('is-active');
 }
 
 export function hideLoader() {
   const loaderElement = document.querySelector('.loader');
 
   if (!loaderElement) return;
-  loaderElement.style.display = 'none';
+  loaderElement.classList.remove('is-active');
 }

@@ -1,28 +1,30 @@
+import './js/polyfills.js';
 import './css/styles.css';
 import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 import { fetchImages } from './js/pixabay-api.js';
 import { renderGallery, showLoader, hideLoader } from './js/render-functions.js';
 
 const form = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
-const loaderElement = document.querySelector('.loader');
-
 let lightbox = new SimpleLightbox('.gallery a', {
   docClose: true,
   docLoading: true,
 });
 
-form.addEventListener('submit', async event => {
+form.addEventListener('submit', event => {
   event.preventDefault();
 
   const searchQuery = event.currentTarget.elements['search-text'].value.trim();
 
   if (!searchQuery) {
     iziToast.warning({
-      title: 'Warning',
+      title: '',
       message: 'Please enter a search query!',
       position: 'topRight',
+      class: 'toast-error',
     });
     return;
   }
@@ -30,30 +32,40 @@ form.addEventListener('submit', async event => {
   gallery.innerHTML = '';
   showLoader();
 
-  try {
-    const data = await fetchImages(searchQuery);
+  fetchImages(searchQuery)
+    .then(data => {
+      if (data.hits.length === 0) {
+        iziToast.error({
+          title: '',
+          message:
+            'Sorry, there are no images matching your search query. Please try again!',
+          position: 'topRight',
+          class: 'toast-error',
+        });
+        return;
+      }
 
-    hideLoader();
+      renderGallery(data.hits);
+      lightbox.refresh();
+      form.reset();
+    })
+    .catch(error => {
+      let message = 'Failed to fetch images. Please try again!';
 
-    if (data.hits.length === 0) {
+      if (error?.code === 'MISSING_KEY') {
+        message = 'Missing Pixabay API key. Add VITE_PIXABAY_KEY to .env.';
+      } else if (error?.response?.status === 400) {
+        message = 'Invalid Pixabay API key. Please check VITE_PIXABAY_KEY.';
+      }
+
       iziToast.error({
-        title: 'Error',
-        message: 'Sorry, there are no images matching your search query. Please try again!',
+        title: '',
+        message,
         position: 'topRight',
+        class: 'toast-error',
       });
-      return;
-    }
-
-    renderGallery(data.hits);
-    lightbox.refresh();
-  } catch (error) {
-    hideLoader();
-    iziToast.error({
-      title: 'Error',
-      message: 'Failed to fetch images. Please try again!',
-      position: 'topRight',
+    })
+    .finally(() => {
+      hideLoader();
     });
-  }
-
-  form.reset();
 });

@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Search</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.1/simple-lightbox.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/pure-css-loader/dist/css-loader.css"
+    />
   </head>
   <body>
     <main>
-      <h1>Image Search</h1>
-
       <form class="search-form">
         <input
           class="search-input"
@@ -22,7 +23,7 @@
         <button class="search-button" type="submit">Search</button>
       </form>
 
-      <div class="loader"></div>
+      <div class="loader loader-default"></div>
 
       <ul class="gallery"></ul>
     </main>
