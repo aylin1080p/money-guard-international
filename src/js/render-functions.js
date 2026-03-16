@@ -1,18 +1,7 @@
-export function renderGallery(images) {
-  const gallery = document.querySelector('.gallery');
-
-  if (!gallery) {
-    return;
-  }
-
-  if (!Array.isArray(images) || images.length === 0) {
-    gallery.innerHTML = '';
-    return;
-  }
-
-  const galleryHTML = images
+function createGalleryMarkup(images) {
+  return images
     .map(
-      image => `
+      (image) => `
         <li class="gallery-list-item">
           <a class="gallery-item" href="${image.largeImageURL}">
             <img
@@ -40,23 +29,63 @@ export function renderGallery(images) {
             </div>
           </a>
         </li>
-      `
+      `,
     )
-    .join('');
+    .join("");
+}
 
-  gallery.innerHTML = galleryHTML;
+export function clearGallery() {
+  const gallery = document.querySelector(".gallery");
+
+  if (gallery) {
+    gallery.innerHTML = "";
+  }
+}
+
+export function renderGallery(images) {
+  const gallery = document.querySelector(".gallery");
+
+  if (!gallery || !Array.isArray(images) || images.length === 0) {
+    return;
+  }
+
+  gallery.innerHTML = createGalleryMarkup(images);
+}
+
+export function appendGallery(images) {
+  const gallery = document.querySelector(".gallery");
+
+  if (!gallery || !Array.isArray(images) || images.length === 0) {
+    return;
+  }
+
+  gallery.insertAdjacentHTML("beforeend", createGalleryMarkup(images));
 }
 
 export function showLoader() {
-  const loaderElement = document.querySelector('.loader');
+  const loaderElement = document.querySelector(".loader");
 
   if (!loaderElement) return;
-  loaderElement.classList.add('is-active');
+  loaderElement.classList.add("is-active");
 }
 
 export function hideLoader() {
-  const loaderElement = document.querySelector('.loader');
+  const loaderElement = document.querySelector(".loader");
 
   if (!loaderElement) return;
-  loaderElement.classList.remove('is-active');
+  loaderElement.classList.remove("is-active");
+}
+
+export function showLoadMoreButton() {
+  const loadMoreButton = document.querySelector(".load-more-button");
+
+  if (!loadMoreButton) return;
+  loadMoreButton.classList.add("is-visible");
+}
+
+export function hideLoadMoreButton() {
+  const loadMoreButton = document.querySelector(".load-more-button");
+
+  if (!loadMoreButton) return;
+  loadMoreButton.classList.remove("is-visible");
 }

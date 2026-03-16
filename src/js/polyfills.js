@@ -1,3 +1,3 @@
-if (typeof globalThis.global === 'undefined') {
+if (typeof globalThis.global === "undefined") {
   globalThis.global = globalThis;
 }

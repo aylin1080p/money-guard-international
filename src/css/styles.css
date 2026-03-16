@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
 
 *,
 *::before,
@@ -10,7 +10,7 @@ body {
   margin: 0;
   background-color: #ffffff;
   color: #2e2f42;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 main {
@@ -70,11 +70,45 @@ main {
 }
 
 .loader {
-  margin: 32px auto 0;
+  margin: 16px auto 0;
 }
 
 .loader:not(.is-active) {
   display: none;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 36px;
+}
+
+.load-more-button {
+  display: none;
+  margin-top: 32px;
+  min-width: 125px;
+  height: 40px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.load-more-button.is-visible {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.load-more-button:hover {
+  background-color: #6c8cff;
 }
 
 .gallery {
@@ -153,7 +187,7 @@ main {
 }
 
 .iziToast.toast-error::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0 auto 0 0;
   width: 97px;
@@ -171,7 +205,7 @@ main {
 
 .iziToast.toast-error .iziToast-message {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.04em;
@@ -181,6 +215,26 @@ main {
 .iziToast.toast-error .iziToast-close {
   opacity: 1;
   color: #ffffff;
+}
+
+.iziToast.toast-end {
+  width: 432px;
+  min-height: 88px;
+  border-radius: 4px;
+  background-color: #59a10d;
+  border-bottom: 2px solid #d6f3b4;
+  box-shadow: none;
+  padding: 20px;
+}
+
+.iziToast.toast-end .iziToast-title {
+  display: none;
+}
+
+.iziToast.toast-end .iziToast-message,
+.iziToast.toast-end .iziToast-close {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
 }
 
 @media (max-width: 1200px) {
