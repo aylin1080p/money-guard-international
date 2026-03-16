@@ -6,8 +6,9 @@ function createGalleryMarkup(images) {
           <a class="gallery-item" href="${image.largeImageURL}">
             <img
               class="gallery-image"
-              src="${image.webformatURL}"
+              src="${image.previewURL}"
               alt="${image.tags}"
+              loading="lazy"
             />
             <div class="image-info">
               <div class="info-item">

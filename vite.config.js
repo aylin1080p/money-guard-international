@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
 
-export default defineConfig({
-  base: "/goit-js-hw-12/",
-});
+export default defineConfig(({ command }) => ({
+  base: command === "build" ? "/goit-js-hw-12/" : "/",
+}));
