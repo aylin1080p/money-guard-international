@@ -1,0 +1,4 @@
+.transactions-list {
+  display: grid;
+  gap: 16px;
+}

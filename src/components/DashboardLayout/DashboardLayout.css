@@ -1,0 +1,27 @@
+.dashboard-layout {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at left bottom, rgba(112, 0, 255, 0.34), transparent 32%),
+    radial-gradient(circle at right bottom, rgba(255, 134, 141, 0.24), transparent 24%),
+    linear-gradient(180deg, #2a1c5b 0%, #1b1040 100%);
+}
+
+.dashboard-layout__container {
+  display: grid;
+  gap: 20px;
+  padding-top: 12px;
+  padding-bottom: 28px;
+}
+
+.dashboard-layout__sidebar,
+.dashboard-layout__content {
+  display: grid;
+  gap: 18px;
+}
+
+@media (min-width: 768px) {
+  .dashboard-layout__container {
+    grid-template-columns: 256px minmax(0, 1fr);
+    align-items: start;
+  }
+}

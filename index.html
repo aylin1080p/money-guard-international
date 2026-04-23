@@ -3,35 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Search</title>
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/pure-css-loader/dist/css-loader.css"
+    <meta
+      name="description"
+      content="Money Guard project scaffold for GoIT fullstack course."
     />
+    <link rel="icon" type="image/svg+xml" href="/money-guard.svg" />
+    <title>Money Guard</title>
   </head>
   <body>
-    <main>
-      <form class="search-form">
-        <input
-          class="search-input"
-          type="text"
-          name="search-text"
-          placeholder="Search images..."
-          autocomplete="off"
-          required
-        />
-        <button class="search-button" type="submit">Search</button>
-      </form>
-
-      <ul class="gallery"></ul>
-
-      <div class="controls">
-        <button class="load-more-button" type="button">Load more</button>
-        <div class="loader loader-default"></div>
-      </div>
-    </main>
-
-    <script type="module" src="/src/main.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

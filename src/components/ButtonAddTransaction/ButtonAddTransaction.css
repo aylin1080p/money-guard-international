@@ -1,0 +1,11 @@
+.button-add-transaction {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 50%;
+  color: var(--color-text);
+  background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
+}

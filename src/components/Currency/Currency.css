@@ -1,0 +1,12 @@
+.currency {
+  display: grid;
+  gap: 12px;
+}
+
+.currency__title {
+  font-size: 20px;
+}
+
+.currency__text {
+  color: var(--color-text-muted);
+}

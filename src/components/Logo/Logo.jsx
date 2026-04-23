@@ -1,0 +1,13 @@
+import Icon from '../Icon/Icon.jsx';
+import './Logo.css';
+
+function Logo() {
+  return (
+    <a className="logo" href="/">
+      <Icon className="logo__icon" name="logo" />
+      <span className="logo__text">Money Guard</span>
+    </a>
+  );
+}
+
+export default Logo;

@@ -1,0 +1,4 @@
+.statistics-table {
+  display: grid;
+  gap: 16px;
+}

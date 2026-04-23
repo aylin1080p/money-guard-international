@@ -1,5 +1,7 @@
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ command }) => ({
-  base: command === "build" ? "/goit-js-hw-12/" : "/",
+  plugins: [react()],
+  base: command === 'build' ? '/goit-js-hw-12/' : '/',
 }));

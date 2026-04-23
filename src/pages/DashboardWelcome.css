@@ -1,0 +1,25 @@
+.dashboard-welcome {
+  display: grid;
+  gap: 12px;
+  min-height: 320px;
+  align-content: center;
+}
+
+.dashboard-welcome__eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.dashboard-welcome__title {
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.dashboard-welcome__description {
+  max-width: 48ch;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}

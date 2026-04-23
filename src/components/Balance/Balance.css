@@ -1,0 +1,15 @@
+.balance {
+  display: grid;
+  gap: 8px;
+}
+
+.balance__label {
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.balance__value {
+  font-size: 30px;
+  font-weight: 700;
+}

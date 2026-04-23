@@ -1,0 +1,4 @@
+.edit-transaction-form {
+  display: grid;
+  gap: 16px;
+}
