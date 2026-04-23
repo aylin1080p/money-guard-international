@@ -1,0 +1,300 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Length 2418 >>
+stream
+BT
+/F2 18 Tf 54 800 Td (Money Guard Team Task Distribution) Tj
+/F1 10 Tf 54 772 Td () Tj
+/F1 10 Tf 54 756 Td (Project folder:) Tj
+/F1 10 Tf 54 740 Td (/Users/aylingunes/Desktop/Money Guard \(International\)) Tj
+/F1 10 Tf 54 724 Td () Tj
+/F2 13 Tf 54 708 Td (Shared Rules) Tj
+/F1 10 Tf 54 686 Td () Tj
+/F1 10 Tf 54 670 Td (- Everyone should work only in their own files.) Tj
+/F1 10 Tf 54 654 Td (- Do not change another teammate's files without informing them first.) Tj
+/F1 10 Tf 54 638 Td (- Route names must stay the same:) Tj
+/F1 10 Tf 54 622 Td (  /register, /login, /dashboard, /home, /statistics, /currency) Tj
+/F1 10 Tf 54 606 Td (- Everyone can first finish their own UI with mock data.) Tj
+/F1 10 Tf 54 590 Td (- Do not commit .env or any sensitive key/token information.) Tj
+/F1 10 Tf 54 574 Td (- Shared config, route, store and service files should only be changed by the assigned) Tj
+/F1 10 Tf 54 558 Td (owner.) Tj
+/F1 10 Tf 54 542 Td () Tj
+/F2 13 Tf 54 526 Td (Hilal Hanim) Tj
+/F1 10 Tf 54 504 Td () Tj
+/F1 10 Tf 54 488 Td (Area:) Tj
+/F1 10 Tf 54 472 Td (- Registration flow) Tj
+/F1 10 Tf 54 456 Td (- Shared auth layout) Tj
+/F1 10 Tf 54 440 Td () Tj
+/F1 10 Tf 54 424 Td (Files:) Tj
+/F1 10 Tf 54 408 Td (- src/pages/RegistrationPage.jsx) Tj
+/F1 10 Tf 54 392 Td (- src/pages/RegistrationPage.css) Tj
+/F1 10 Tf 54 376 Td (- src/components/RegistrationForm/RegistrationForm.jsx) Tj
+/F1 10 Tf 54 360 Td (- src/components/RegistrationForm/RegistrationForm.css) Tj
+/F1 10 Tf 54 344 Td (- src/components/ProgressBar/ProgressBar.jsx) Tj
+/F1 10 Tf 54 328 Td (- src/components/ProgressBar/ProgressBar.css) Tj
+/F1 10 Tf 54 312 Td (- src/components/AuthLayout/AuthLayout.jsx) Tj
+/F1 10 Tf 54 296 Td (- src/components/AuthLayout/AuthLayout.css) Tj
+/F1 10 Tf 54 280 Td (- src/assets/images/auth/* when needed for auth visuals) Tj
+/F1 10 Tf 54 264 Td () Tj
+/F1 10 Tf 54 248 Td (Responsibilities:) Tj
+/F1 10 Tf 54 232 Td (- Registration page responsive layout) Tj
+/F1 10 Tf 54 216 Td (- Register form UI) Tj
+/F1 10 Tf 54 200 Td (- Confirm password field and progress bar) Tj
+/F1 10 Tf 54 184 Td (- Auth card and auth background structure) Tj
+/F1 10 Tf 54 168 Td (- Log in link placement on register page) Tj
+/F1 10 Tf 54 152 Td () Tj
+/F1 10 Tf 54 136 Td (Should not edit:) Tj
+/F1 10 Tf 54 120 Td (- Login*) Tj
+/F1 10 Tf 54 104 Td (- routes/*) Tj
+/F1 10 Tf 54 88 Td (- store/*) Tj
+/F1 10 Tf 54 72 Td (- services/*) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Length 2168 >>
+stream
+BT
+/F1 10 Tf 54 800 Td () Tj
+/F2 13 Tf 54 784 Td (Aylin) Tj
+/F1 10 Tf 54 762 Td () Tj
+/F1 10 Tf 54 746 Td (Area:) Tj
+/F1 10 Tf 54 730 Td (- Login flow) Tj
+/F1 10 Tf 54 714 Td () Tj
+/F1 10 Tf 54 698 Td (Files:) Tj
+/F1 10 Tf 54 682 Td (- src/pages/LoginPage.jsx) Tj
+/F1 10 Tf 54 666 Td (- src/pages/LoginPage.css) Tj
+/F1 10 Tf 54 650 Td (- src/components/LoginForm/LoginForm.jsx) Tj
+/F1 10 Tf 54 634 Td (- src/components/LoginForm/LoginForm.css) Tj
+/F1 10 Tf 54 618 Td () Tj
+/F1 10 Tf 54 602 Td (Responsibilities:) Tj
+/F1 10 Tf 54 586 Td (- Login page responsive layout) Tj
+/F1 10 Tf 54 570 Td (- Email and password fields) Tj
+/F1 10 Tf 54 554 Td (- Register link on login page) Tj
+/F1 10 Tf 54 538 Td (- Login form UI and validation view) Tj
+/F1 10 Tf 54 522 Td () Tj
+/F1 10 Tf 54 506 Td (Should not edit:) Tj
+/F1 10 Tf 54 490 Td (- Registration*) Tj
+/F1 10 Tf 54 474 Td (- AuthLayout*) Tj
+/F1 10 Tf 54 458 Td (- routes/*) Tj
+/F1 10 Tf 54 442 Td (- store/*) Tj
+/F1 10 Tf 54 426 Td (- services/*) Tj
+/F1 10 Tf 54 410 Td () Tj
+/F2 13 Tf 54 394 Td (Burak) Tj
+/F1 10 Tf 54 372 Td () Tj
+/F1 10 Tf 54 356 Td (Area:) Tj
+/F1 10 Tf 54 340 Td (- Dashboard shell) Tj
+/F1 10 Tf 54 324 Td (- Top and side interface areas) Tj
+/F1 10 Tf 54 308 Td () Tj
+/F1 10 Tf 54 292 Td (Files:) Tj
+/F1 10 Tf 54 276 Td (- src/pages/DashboardPage.jsx) Tj
+/F1 10 Tf 54 260 Td (- src/components/DashboardLayout/DashboardLayout.jsx) Tj
+/F1 10 Tf 54 244 Td (- src/components/DashboardLayout/DashboardLayout.css) Tj
+/F1 10 Tf 54 228 Td (- src/components/Header/Header.jsx) Tj
+/F1 10 Tf 54 212 Td (- src/components/Header/Header.css) Tj
+/F1 10 Tf 54 196 Td (- src/components/Navigation/Navigation.jsx) Tj
+/F1 10 Tf 54 180 Td (- src/components/Navigation/Navigation.css) Tj
+/F1 10 Tf 54 164 Td (- src/components/Balance/Balance.jsx) Tj
+/F1 10 Tf 54 148 Td (- src/components/Balance/Balance.css) Tj
+/F1 10 Tf 54 132 Td (- src/components/Logo/Logo.jsx) Tj
+/F1 10 Tf 54 116 Td (- src/components/Logo/Logo.css) Tj
+/F1 10 Tf 54 100 Td (- src/components/Icon/Icon.jsx) Tj
+/F1 10 Tf 54 84 Td (- src/components/LogoutModal/LogoutModal.jsx) Tj
+/F1 10 Tf 54 68 Td (- src/components/LogoutModal/LogoutModal.css) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Length 2474 >>
+stream
+BT
+/F1 10 Tf 54 800 Td (- src/assets/icons/*) Tj
+/F1 10 Tf 54 784 Td () Tj
+/F1 10 Tf 54 768 Td (Responsibilities:) Tj
+/F1 10 Tf 54 752 Td (- Dashboard general grid layout) Tj
+/F1 10 Tf 54 736 Td (- Header design) Tj
+/F1 10 Tf 54 720 Td (- Navigation states) Tj
+/F1 10 Tf 54 704 Td (- Balance card UI) Tj
+/F1 10 Tf 54 688 Td (- Logout modal UI) Tj
+/F1 10 Tf 54 672 Td (- Logo and icon usage) Tj
+/F1 10 Tf 54 656 Td () Tj
+/F1 10 Tf 54 640 Td (Should not edit:) Tj
+/F1 10 Tf 54 624 Td (- HomeTab*) Tj
+/F1 10 Tf 54 608 Td (- Transactions*) Tj
+/F1 10 Tf 54 592 Td (- Statistics*) Tj
+/F1 10 Tf 54 576 Td (- Currency*) Tj
+/F1 10 Tf 54 560 Td (- routes/*) Tj
+/F1 10 Tf 54 544 Td (- store/*) Tj
+/F1 10 Tf 54 528 Td (- services/*) Tj
+/F1 10 Tf 54 512 Td () Tj
+/F2 13 Tf 54 496 Td (Dogukan) Tj
+/F1 10 Tf 54 474 Td () Tj
+/F1 10 Tf 54 458 Td (Area:) Tj
+/F1 10 Tf 54 442 Td (- Home tab) Tj
+/F1 10 Tf 54 426 Td (- Transaction CRUD interface) Tj
+/F1 10 Tf 54 410 Td () Tj
+/F1 10 Tf 54 394 Td (Files:) Tj
+/F1 10 Tf 54 378 Td (- src/pages/HomeTab.jsx) Tj
+/F1 10 Tf 54 362 Td (- src/pages/HomeTab.css) Tj
+/F1 10 Tf 54 346 Td (- src/components/TransactionsList/TransactionsList.jsx) Tj
+/F1 10 Tf 54 330 Td (- src/components/TransactionsList/TransactionsList.css) Tj
+/F1 10 Tf 54 314 Td (- src/components/TransactionsItem/TransactionsItem.jsx) Tj
+/F1 10 Tf 54 298 Td (- src/components/TransactionsItem/TransactionsItem.css) Tj
+/F1 10 Tf 54 282 Td (- src/components/ButtonAddTransaction/ButtonAddTransaction.jsx) Tj
+/F1 10 Tf 54 266 Td (- src/components/ButtonAddTransaction/ButtonAddTransaction.css) Tj
+/F1 10 Tf 54 250 Td (- src/components/ModalAddTransaction/ModalAddTransaction.jsx) Tj
+/F1 10 Tf 54 234 Td (- src/components/ModalAddTransaction/ModalAddTransaction.css) Tj
+/F1 10 Tf 54 218 Td (- src/components/AddTransactionForm/AddTransactionForm.jsx) Tj
+/F1 10 Tf 54 202 Td (- src/components/AddTransactionForm/AddTransactionForm.css) Tj
+/F1 10 Tf 54 186 Td (- src/components/ModalEditTransaction/ModalEditTransaction.jsx) Tj
+/F1 10 Tf 54 170 Td (- src/components/ModalEditTransaction/ModalEditTransaction.css) Tj
+/F1 10 Tf 54 154 Td (- src/components/EditTransactionForm/EditTransactionForm.jsx) Tj
+/F1 10 Tf 54 138 Td (- src/components/EditTransactionForm/EditTransactionForm.css) Tj
+/F1 10 Tf 54 122 Td (- src/constants/transactionCategories.js if needed for category UI) Tj
+/F1 10 Tf 54 106 Td () Tj
+/F1 10 Tf 54 90 Td (Responsibilities:) Tj
+/F1 10 Tf 54 74 Td (- Home tab layout) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Length 2237 >>
+stream
+BT
+/F1 10 Tf 54 800 Td (- Transactions list desktop and mobile view) Tj
+/F1 10 Tf 54 784 Td (- Add and edit modal UI) Tj
+/F1 10 Tf 54 768 Td (- Add transaction button) Tj
+/F1 10 Tf 54 752 Td (- Transaction row/card UI) Tj
+/F1 10 Tf 54 736 Td (- Empty state and scroll area) Tj
+/F1 10 Tf 54 720 Td () Tj
+/F1 10 Tf 54 704 Td (Should not edit:) Tj
+/F1 10 Tf 54 688 Td (- Header*) Tj
+/F1 10 Tf 54 672 Td (- Navigation*) Tj
+/F1 10 Tf 54 656 Td (- Statistics*) Tj
+/F1 10 Tf 54 640 Td (- Currency*) Tj
+/F1 10 Tf 54 624 Td (- routes/*) Tj
+/F1 10 Tf 54 608 Td (- store/*) Tj
+/F1 10 Tf 54 592 Td (- services/*) Tj
+/F1 10 Tf 54 576 Td () Tj
+/F2 13 Tf 54 560 Td (Gaye) Tj
+/F1 10 Tf 54 538 Td () Tj
+/F1 10 Tf 54 522 Td (Area:) Tj
+/F1 10 Tf 54 506 Td (- App infrastructure) Tj
+/F1 10 Tf 54 490 Td (- Route handling) Tj
+/F1 10 Tf 54 474 Td (- Loader) Tj
+/F1 10 Tf 54 458 Td (- Currency area) Tj
+/F1 10 Tf 54 442 Td (- Statistics area) Tj
+/F1 10 Tf 54 426 Td (- Store, service and env layer) Tj
+/F1 10 Tf 54 410 Td () Tj
+/F1 10 Tf 54 394 Td (Files:) Tj
+/F1 10 Tf 54 378 Td (- src/app/App.jsx) Tj
+/F1 10 Tf 54 362 Td (- src/app/App.css) Tj
+/F1 10 Tf 54 346 Td (- src/routes/AppRoutes.jsx) Tj
+/F1 10 Tf 54 330 Td (- src/routes/PrivateRoute.jsx) Tj
+/F1 10 Tf 54 314 Td (- src/routes/PublicRoute.jsx) Tj
+/F1 10 Tf 54 298 Td (- src/components/Loader/Loader.jsx) Tj
+/F1 10 Tf 54 282 Td (- src/components/Loader/Loader.css) Tj
+/F1 10 Tf 54 266 Td (- src/pages/CurrencyTab.jsx) Tj
+/F1 10 Tf 54 250 Td (- src/pages/CurrencyTab.css) Tj
+/F1 10 Tf 54 234 Td (- src/components/Currency/Currency.jsx) Tj
+/F1 10 Tf 54 218 Td (- src/components/Currency/Currency.css) Tj
+/F1 10 Tf 54 202 Td (- src/pages/StatisticsTab.jsx) Tj
+/F1 10 Tf 54 186 Td (- src/pages/StatisticsTab.css) Tj
+/F1 10 Tf 54 170 Td (- src/components/Chart/Chart.jsx) Tj
+/F1 10 Tf 54 154 Td (- src/components/Chart/Chart.css) Tj
+/F1 10 Tf 54 138 Td (- src/components/StatisticsDashboard/StatisticsDashboard.jsx) Tj
+/F1 10 Tf 54 122 Td (- src/components/StatisticsDashboard/StatisticsDashboard.css) Tj
+/F1 10 Tf 54 106 Td (- src/components/StatisticsTable/StatisticsTable.jsx) Tj
+/F1 10 Tf 54 90 Td (- src/components/StatisticsTable/StatisticsTable.css) Tj
+/F1 10 Tf 54 74 Td (- src/config/env.js) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Length 1554 >>
+stream
+BT
+/F1 10 Tf 54 800 Td (- src/constants/routes.js) Tj
+/F1 10 Tf 54 784 Td (- src/constants/assets.js) Tj
+/F1 10 Tf 54 768 Td (- src/services/*) Tj
+/F1 10 Tf 54 752 Td (- src/store/*) Tj
+/F1 10 Tf 54 736 Td (- .env.example) Tj
+/F1 10 Tf 54 720 Td () Tj
+/F1 10 Tf 54 704 Td (Responsibilities:) Tj
+/F1 10 Tf 54 688 Td (- App shell) Tj
+/F1 10 Tf 54 672 Td (- Route protection logic) Tj
+/F1 10 Tf 54 656 Td (- Global loader) Tj
+/F1 10 Tf 54 640 Td (- Currency page and component) Tj
+/F1 10 Tf 54 624 Td (- Statistics page and components) Tj
+/F1 10 Tf 54 608 Td (- Environment config) Tj
+/F1 10 Tf 54 592 Td (- Store and services setup) Tj
+/F1 10 Tf 54 576 Td () Tj
+/F1 10 Tf 54 560 Td (Should not edit:) Tj
+/F1 10 Tf 54 544 Td (- Registration*) Tj
+/F1 10 Tf 54 528 Td (- Login*) Tj
+/F1 10 Tf 54 512 Td (- HomeTab*) Tj
+/F1 10 Tf 54 496 Td (- Transactions*) Tj
+/F1 10 Tf 54 480 Td (- Header*) Tj
+/F1 10 Tf 54 464 Td (- Navigation*) Tj
+/F1 10 Tf 54 448 Td (- Balance*) Tj
+/F1 10 Tf 54 432 Td () Tj
+/F2 13 Tf 54 416 Td (Final Structure Rule) Tj
+/F1 10 Tf 54 394 Td () Tj
+/F1 10 Tf 54 378 Td (- Hilal and Aylin work only in auth area.) Tj
+/F1 10 Tf 54 362 Td (- Burak works only in dashboard shell area.) Tj
+/F1 10 Tf 54 346 Td (- Dogukan works only in transaction area.) Tj
+/F1 10 Tf 54 330 Td (- Gaye works only in app, route, env, store, services, currency and statistics area.) Tj
+/F1 10 Tf 54 314 Td (- Everyone should finish their own UI first.) Tj
+/F1 10 Tf 54 298 Td (- Redux and API integration can be connected after each screen is visually ready.) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
+endobj
+9 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 4 0 R >>
+endobj
+10 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 5 0 R >>
+endobj
+11 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 6 0 R >>
+endobj
+12 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
+endobj
+13 0 obj
+<< /Type /Pages /Count 5 /Kids [ 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R ] >>
+endobj
+14 0 obj
+<< /Type /Catalog /Pages 13 0 R >>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000000154 00000 n 
+0000002624 00000 n 
+0000004844 00000 n 
+0000007370 00000 n 
+0000009659 00000 n 
+0000011265 00000 n 
+0000011401 00000 n 
+0000011537 00000 n 
+0000011674 00000 n 
+0000011811 00000 n 
+0000011948 00000 n 
+0000012035 00000 n 
+trailer
+<< /Size 15 /Root 14 0 R >>
+startxref
+12086
+%%EOF
