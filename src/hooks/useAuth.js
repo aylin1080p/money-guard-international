@@ -1,8 +1,8 @@
-import { getStoredToken, getStoredUser } from '../utils/auth.js';
+import { useSelector } from 'react-redux';
 
 export function useAuth() {
-  const token = getStoredToken();
-  const user = getStoredUser();
+  const user = useSelector((state) => state.auth.user);
+  const token = useSelector((state) => state.auth.token);
 
   return {
     user,

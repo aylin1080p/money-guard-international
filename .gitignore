@@ -30,3 +30,7 @@ dist-ssr
 
 # macOS workflows
 *.workflow/
+
+
+src/utils/auth.js
+
