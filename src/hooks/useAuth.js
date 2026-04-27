@@ -9,7 +9,7 @@ export function useAuth() {
 
   return {
     user,
-    isLoggedIn,
+    isLoggedIn: isLoggedIn || Boolean(token),
     token,
   };
 }

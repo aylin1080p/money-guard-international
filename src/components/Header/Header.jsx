@@ -1,23 +1,32 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { ROUTES } from '../../constants/routes.js';
 import { useAuth } from '../../hooks/useAuth.js';
-import { clearSession } from '../../utils/auth.js';
+import { clearAuthState } from '../../store/auth/authSlice.js';
+import { logoutUser } from '../../store/auth/authOperations.js';
 import Logo from '../Logo/Logo.jsx';
 import LogoutModal from '../LogoutModal/LogoutModal.jsx';
 import './Header.css';
 
 function Header() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const username = user?.email?.split('@')[0] || 'username';
 
-  const handleLogout = () => {
-    clearSession();
-    setIsModalOpen(false);
-    navigate(ROUTES.LOGIN, { replace: true });
+  const handleLogout = async () => {
+    try {
+      await dispatch(logoutUser()).unwrap();
+    } catch (error) {
+      window.alert(error || 'Logout request failed. Client session will still be cleared.');
+    } finally {
+      dispatch(clearAuthState());
+      setIsModalOpen(false);
+      navigate(ROUTES.LOGIN, { replace: true });
+    }
   };
 
   return (

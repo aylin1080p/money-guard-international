@@ -12,9 +12,19 @@ export const authInitialState = {
   isRefreshing: false,
 };
 
+const clearAuth = state => {
+  state.user = authInitialState.user;
+  state.token = null;
+  state.isLoggedIn = false;
+  state.isRefreshing = false;
+};
+
 const slice = createSlice({
   name: 'auth',
   initialState: authInitialState,
+  reducers: {
+    clearAuthState: clearAuth,
+  },
   extraReducers: builder => {
     builder
       .addCase(registerUser.fulfilled, (state, action) => {
@@ -27,11 +37,8 @@ const slice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-      .addCase(logoutUser.fulfilled, state => {
-        state.user = authInitialState.user;
-        state.token = null;
-        state.isLoggedIn = false;
-      })
+      .addCase(logoutUser.fulfilled, clearAuth)
+      .addCase(logoutUser.rejected, clearAuth)
       .addCase(refreshUser.pending, state => {
         state.isRefreshing = true;
       })
@@ -41,9 +48,10 @@ const slice = createSlice({
         state.isRefreshing = false;
       })
       .addCase(refreshUser.rejected, state => {
-        state.isRefreshing = false;
+        clearAuth(state);
       });
   },
 });
 
+export const { clearAuthState } = slice.actions;
 export const authReducer = slice.reducer;

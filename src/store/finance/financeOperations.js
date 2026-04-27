@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+import { fetchUsdEuroValues } from '../../services/currencyApi.js';
 import { api } from '../../services/api.js';
 import { transactionsApi } from '../../services/transactionsApi.js';
 
@@ -31,7 +32,16 @@ export const fetchTransactions = createAsyncThunk(
   }
 );
 
-export const fetchCurrency = createAsyncThunk('finance/fetchCurrency', async () => []);
+export const fetchCurrency = createAsyncThunk(
+  'finance/fetchCurrency',
+  async (_, thunkAPI) => {
+    try {
+      return await fetchUsdEuroValues();
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 
 export const addTransaction = async payload => payload;
 export const editTransaction = async payload => payload;
