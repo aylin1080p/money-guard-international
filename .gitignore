@@ -32,5 +32,4 @@ dist-ssr
 *.workflow/
 
 
-src/utils/auth.js
 

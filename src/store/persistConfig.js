@@ -1,14 +1,7 @@
-// export const persistConfig = {
-//   key: 'auth',
-//   whitelist: ['token'],
-// };
+import createWebStorageModule from 'redux-persist/lib/storage/createWebStorage';
 
-
-// import storage from 'redux-persist/lib/storage'; // ← add later
-import createWebStorageModule from 'redux-persist/lib/storage/createWebStorage';  // ← remove later
-
-const createWebStorage = createWebStorageModule.default ?? createWebStorageModule;  // ← remove later
-const storage = createWebStorage('local'); // ← remove later
+const createWebStorage = createWebStorageModule.default ?? createWebStorageModule;
+const storage = createWebStorage('local');
 
 export const authPersistConfig = {
   key: 'auth',

@@ -1,14 +1,25 @@
+import axios from 'axios';
+
 import { env } from '../config/env.js';
-import axios from "axios";
 
-axios.defaults.baseURL = env.apiBaseUrl;
+export const api = axios.create({
+  baseURL: env.apiBaseUrl,
+});
 
-// Utility to add JWT
-export const setAuthHeader = (token) => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+api.interceptors.request.use(config => {
+  const nextConfig = { ...config };
+
+  if (!nextConfig.headers) {
+    nextConfig.headers = {};
+  }
+
+  return nextConfig;
+});
+
+export const setAuthHeader = token => {
+  api.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-// Utility to remove JWT
 export const clearAuthHeader = () => {
-  axios.defaults.headers.common.Authorization = '';
+  delete api.defaults.headers.common.Authorization;
 };
