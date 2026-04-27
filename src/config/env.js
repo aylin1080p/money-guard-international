@@ -7,5 +7,6 @@ export const env = {
     'VITE_MONOBANK_API_URL',
     'https://api.monobank.ua/bank/currency'
   ),
+  bypassAuth: readEnv('VITE_BYPASS_AUTH', 'true') === 'true', // remove later
   enableDevtools: readEnv('VITE_ENABLE_DEVTOOLS', 'true') === 'true',
 };

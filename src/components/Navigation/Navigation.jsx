@@ -1,35 +1,36 @@
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes.js';
-import './Navigation.css';
+import css from './Navigation.module.css'
+import icons from '../../assets/icons/navigation-icons.svg'
 
 const buildNavClassName = ({ isActive }) =>
-  `navigation__link${isActive ? ' navigation__link--active' : ''}`;
+  `navigation__link${isActive ? 'navigation__link--active' : ''}`;
 
-const buildSpanClassName = ({ isActive }) =>
-  `navspan${isActive ? ' navigation__link--active' : ''}`;
+// const buildSpanClassName = ({ isActive }) =>
+//   `navspan${isActive ? 'navspan--active' : ''}`;
 
 export default function Navigation() {
   return (
-    <nav className={navigation}>
+    <nav className={css.navigation}>
       <NavLink className={buildNavClassName} to={`${ROUTES.DASHBOARD}${ROUTES.HOME}`}>
-        <svg className={navigation-icon}>
-          <use href="../../assets/icons/navigation-icons.svg#navlink-home"></use>
+        <svg className={css.navicon}>
+          <use href={`${icons}#navlink-home`}></use>
         </svg>
-        <span className={buildSpanClassName}>Home</span>
+        <span className={css.navspan}>Home</span>
       </NavLink>
 
       <NavLink className={buildNavClassName} to={`${ROUTES.DASHBOARD}${ROUTES.STATISTICS}`}>
-        <svg class={navigation-icon}>
+        <svg className={css.navicon}>
           <use href="../../assets/icons/navigation-icons.svg#navlink-statistics"></use>
         </svg>
-        <span className={buildSpanClassName}>Statistics</span>
+        <span className={css.navspan}>Statistics</span>
       </NavLink>
 
       <NavLink className={buildNavClassName} to={`${ROUTES.DASHBOARD}${ROUTES.CURRENCY}`}>
-        <svg class={navigation-icon}>
+        <svg className={css.navicon}>
           <use href="../../assets/icons/navigation-icons.svg#navlink-currency"></use>
         </svg>
-        <span className={buildSpanClassName}>Currency</span>
+        <span className={css.navspan}>Currency</span>
       </NavLink>
     </nav>
   );
