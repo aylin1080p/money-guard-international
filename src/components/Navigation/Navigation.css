@@ -60,6 +60,10 @@
   .navigation__link--active .navspan {
     font-weight: 700;
   }
+
+  .navigation > a:nth-child(3) {
+    display: none;
+  }
 }
 
 @media (min-width: 1280px) {
