@@ -57,7 +57,7 @@
     color: #fbfbfb;
   }
 
-  .navspan--active {
+  .navigation__link--active .navspan {
     font-weight: 700;
   }
 }

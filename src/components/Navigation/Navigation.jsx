@@ -6,9 +6,6 @@ import Icon from '../Icon/Icon.jsx';
 const buildNavClassName = ({ isActive }) =>
   `navigation__link${isActive ? ' navigation__link--active' : ''}`;
 
-// const buildSpanClassName = ({ isActive }) =>
-//   `navspan${isActive ? 'navspan--active' : ''}`;
-
 export default function Navigation() {
   return (
     <nav className="navigation">
