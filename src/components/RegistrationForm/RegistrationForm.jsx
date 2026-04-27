@@ -1,10 +1,12 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 
 import { ROUTES } from '../../constants/routes.js';
+import { registerUser } from '../../store/auth/authOperations.js';
 import Icon from '../Icon/Icon.jsx';
 import Logo from '../Logo/Logo.jsx';
 import ProgressBar from '../ProgressBar/ProgressBar.jsx';
@@ -29,6 +31,7 @@ const registrationSchema = yup.object({
 });
 
 function RegistrationForm() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [submitStatus, setSubmitStatus] = useState('');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -60,12 +63,20 @@ function RegistrationForm() {
           ? 30
           : 0;
 
-  const onSubmit = values => {
-    setSubmitStatus(`Registration complete for ${values.email}. Redirecting to login...`);
-    navigate(ROUTES.LOGIN, {
-      replace: true,
-      state: { registeredEmail: values.email },
-    });
+  const onSubmit = async values => {
+    try {
+      const payload = {
+        name: values.name,
+        email: values.email,
+        password: values.password,
+      };
+
+      await dispatch(registerUser(payload)).unwrap();
+      setSubmitStatus(`Registration complete for ${values.email}. Redirecting to dashboard...`);
+      navigate(ROUTES.DASHBOARD, { replace: true });
+    } catch (error) {
+      setSubmitStatus(error || 'Registration failed. Please try again.');
+    }
   };
 
   return (

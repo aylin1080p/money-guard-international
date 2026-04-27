@@ -1,11 +1,12 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 
 import { ROUTES } from '../../constants/routes.js';
-import { setSession } from '../../utils/auth.js';
+import { loginUser } from '../../store/auth/authOperations.js';
 import Icon from '../Icon/Icon.jsx';
 import Logo from '../Logo/Logo.jsx';
 import './LoginForm.css';
@@ -24,6 +25,7 @@ const loginSchema = yup.object({
 });
 
 function LoginForm() {
+  const dispatch = useDispatch();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
   const navigate = useNavigate();
@@ -41,14 +43,15 @@ function LoginForm() {
     resolver: yupResolver(loginSchema),
   });
 
-  const onSubmit = values => {
-    setSession({
-      token: `demo-token-${Date.now()}`,
-      user: { email: values.email },
-    });
-    setSubmitStatus('Login successful. Redirecting to dashboard...');
-    const nextPath = location.state?.from?.pathname ?? ROUTES.DASHBOARD;
-    navigate(nextPath, { replace: true });
+  const onSubmit = async values => {
+    try {
+      await dispatch(loginUser(values)).unwrap();
+      setSubmitStatus('Login successful. Redirecting to dashboard...');
+      const nextPath = location.state?.from?.pathname ?? ROUTES.DASHBOARD;
+      navigate(nextPath, { replace: true });
+    } catch (error) {
+      setSubmitStatus(error || 'Login failed. Please try again.');
+    }
   };
 
   return (
