@@ -1,4 +1,51 @@
-export const registerUser = async credentials => credentials;
-export const loginUser = async credentials => credentials;
-export const logoutUser = async () => undefined;
-export const refreshUser = async () => undefined;
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
+import * as authApi from '../../services/authApi.js';
+import { clearAuthHeader, setAuthHeader } from '../../services/api.js';
+
+export const registerUser = createAsyncThunk(
+  'auth/registerUser',
+  async (credentials, thunkAPI) => {
+    try {
+      return await authApi.register(credentials);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const loginUser = createAsyncThunk(
+  'auth/loginUser',
+  async (credentials, thunkAPI) => {
+    try {
+      return await authApi.login(credentials);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const logoutUser = createAsyncThunk('auth/logoutUser', async (_, thunkAPI) => {
+  try {
+    await authApi.logout();
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});
+
+export const refreshUser = createAsyncThunk('auth/refreshUser', async (_, thunkAPI) => {
+  const state = thunkAPI.getState();
+  const persistedToken = state.auth.token;
+
+  if (!persistedToken) {
+    return thunkAPI.rejectWithValue('Unable to fetch user');
+  }
+
+  try {
+    setAuthHeader(persistedToken);
+    return await authApi.fetchCurrentUser();
+  } catch (error) {
+    clearAuthHeader();
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});
