@@ -7,7 +7,9 @@ import './HomeTab.css';
 function HomeTab() {
   return (
     <section className="home-tab">
-      <TransactionsList />
+      <div className="home-tab__content">
+        <TransactionsList />
+      </div>
       <ButtonAddTransaction />
       <ModalAddTransaction />
       <ModalEditTransaction />
