@@ -5,7 +5,6 @@ import PrivateRoute from './PrivateRoute.jsx';
 import PublicRoute from './PublicRoute.jsx';
 import CurrencyTab from '../pages/CurrencyTab.jsx';
 import DashboardPage from '../pages/DashboardPage.jsx';
-import DashboardWelcome from '../pages/DashboardWelcome.jsx';
 import HomeTab from '../pages/HomeTab.jsx';
 import LoginPage from '../pages/LoginPage.jsx';
 import RegistrationPage from '../pages/RegistrationPage.jsx';
@@ -40,7 +39,7 @@ function AppRoutes() {
         }
       >
         <Route element={<DashboardLayout />}>
-          <Route index element={<DashboardWelcome />} />
+          <Route index element={<HomeTab />} />
           <Route path={ROUTES.HOME.slice(1)} element={<HomeTab />} />
           <Route path={ROUTES.STATISTICS.slice(1)} element={<StatisticsTab />} />
           <Route path={ROUTES.CURRENCY.slice(1)} element={<CurrencyTab />} />

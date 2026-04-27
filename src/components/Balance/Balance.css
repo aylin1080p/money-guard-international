@@ -1,15 +1,33 @@
 .balance {
   display: grid;
   gap: 8px;
+  padding: 16px 20px;
+  border-radius: 20px;
+  background: rgba(82, 59, 126, 0.6);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
 }
 
 .balance__label {
+  margin: 0;
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  font-size: 12px;
 }
 
 .balance__value {
+  margin: 0;
   font-size: 30px;
   font-weight: 700;
+  color: #fbfbfb;
+}
+
+@media (max-width: 767px) {
+  .balance {
+    padding: 16px;
+  }
+
+  .balance__value {
+    font-size: 24px;
+  }
 }

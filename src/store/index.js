@@ -11,11 +11,15 @@ import {
 } from 'redux-persist';
 
 import { authReducer } from './auth/authSlice.js';
+import { financeReducer } from './finance/financeSlice.js';
+import globalReducer from './global/globalSlice.js';
 import { authPersistConfig } from './persistConfig.js';
 
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
+    finance: financeReducer,
+    global: globalReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

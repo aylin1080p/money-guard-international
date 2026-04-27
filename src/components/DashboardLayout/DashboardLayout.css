@@ -25,3 +25,13 @@
     align-items: start;
   }
 }
+
+@media (max-width: 767px) {
+  .dashboard-layout__sidebar .currency {
+    display: none;
+  }
+
+  .dashboard-layout__content {
+    padding-bottom: 80px;
+  }
+}
