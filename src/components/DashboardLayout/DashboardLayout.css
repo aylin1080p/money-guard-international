@@ -1,27 +1,199 @@
+/* src/components/DashboardLayout/DashboardLayout.css */
+
 .dashboard-layout {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at left bottom, rgba(112, 0, 255, 0.34), transparent 32%),
-    radial-gradient(circle at right bottom, rgba(255, 134, 141, 0.24), transparent 24%),
-    linear-gradient(180deg, #2a1c5b 0%, #1b1040 100%);
+  background: #101010;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
 }
 
+/* HEADER */
+.dashboard-layout > header,
+.dashboard-header {
+  width: 100%;
+  max-width: 1280px;
+  height: 80px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: linear-gradient(
+    180deg,
+    rgba(47, 21, 176, 0.73) 0%,
+    rgba(47, 21, 176, 0.33) 100%
+  );
+  backdrop-filter: blur(50px);
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+/* MAIN CONTAINER */
 .dashboard-layout__container {
-  display: grid;
-  gap: 20px;
-  padding-top: 12px;
-  padding-bottom: 28px;
+  width: 100%;
+  max-width: 1280px;
+  min-height: calc(100vh - 80px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
 }
 
-.dashboard-layout__sidebar,
+/* SIDEBAR */
+.dashboard-layout__sidebar {
+  width: 480px;
+  min-width: 480px;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(74, 86, 226, 0.25),
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(47, 21, 176, 0.73) 0%,
+      rgba(47, 21, 176, 0.33) 100%
+    );
+  backdrop-filter: blur(100px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* NAVIGATION AREA */
+.dashboard-layout__sidebar nav {
+  padding: 40px 32px 0;
+  min-height: 214px;
+}
+
+/* BALANCE AREA */
+.dashboard-layout__sidebar .balance {
+  width: 480px;
+  height: 80px;
+  background: rgba(82, 59, 126, 0.6);
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+}
+
+/* CURRENCY AREA */
+.dashboard-layout__sidebar .currency {
+  width: 480px;
+  height: 380px;
+  background: linear-gradient(
+    180deg,
+    rgba(74, 86, 226, 0.1) 0%,
+    rgba(74, 86, 226, 0.5) 100%
+  );
+  backdrop-filter: blur(50px);
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* CONTENT AREA */
 .dashboard-layout__content {
-  display: grid;
-  gap: 18px;
+  flex: 1;
+  min-width: 0;
+  padding: 32px;
+  background:
+    radial-gradient(
+      circle at bottom right,
+      rgba(128, 0, 128, 0.25),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(47, 21, 176, 0.2) 0%,
+      rgba(34, 13, 91, 0.1) 100%
+    );
+  overflow-y: auto;
 }
 
-@media (min-width: 768px) {
+/* TABLET */
+@media screen and (max-width: 1279px) {
   .dashboard-layout__container {
-    grid-template-columns: 256px minmax(0, 1fr);
-    align-items: start;
+    flex-direction: column;
+    max-width: 768px;
+  }
+
+  .dashboard-layout__sidebar {
+    width: 100%;
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "nav currency"
+      "balance currency";
+  }
+
+  .dashboard-layout__sidebar nav {
+    grid-area: nav;
+    min-height: auto;
+    padding: 32px;
+  }
+
+  .dashboard-layout__sidebar .balance {
+    grid-area: balance;
+    width: 100%;
+  }
+
+  .dashboard-layout__sidebar .currency {
+    grid-area: currency;
+    width: 100%;
+    height: 300px;
+  }
+
+  .dashboard-layout__content {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .dashboard-layout > header,
+  .dashboard-header {
+    max-width: 768px;
+    padding: 0 24px;
+  }
+}
+
+/* MOBILE */
+@media screen and (max-width: 767px) {
+  .dashboard-layout__container {
+    max-width: 100%;
+  }
+
+  .dashboard-layout > header,
+  .dashboard-header {
+    height: 60px;
+    padding: 0 20px;
+  }
+
+  .dashboard-layout__sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .dashboard-layout__sidebar nav {
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .dashboard-layout__sidebar .balance {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+
+  .dashboard-layout__sidebar .currency {
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+    margin-top: 20px;
+  }
+
+  .dashboard-layout__content {
+    padding: 20px 16px 100px;
   }
 }
