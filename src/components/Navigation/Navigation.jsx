@@ -1,32 +1,36 @@
 import { NavLink } from 'react-router-dom';
-
 import { ROUTES } from '../../constants/routes.js';
-import Icon from '../Icon/Icon.jsx';
 import './Navigation.css';
 
 const buildNavClassName = ({ isActive }) =>
   `navigation__link${isActive ? ' navigation__link--active' : ''}`;
 
-function Navigation() {
+const buildSpanClassName = ({ isActive }) =>
+  `navspan${isActive ? ' navigation__link--active' : ''}`;
+
+export default function Navigation() {
   return (
-    <nav className="navigation">
+    <nav className={navigation}>
       <NavLink className={buildNavClassName} to={`${ROUTES.DASHBOARD}${ROUTES.HOME}`}>
-        <Icon className="navigation__icon" name="home" width={18} height={18} />
-        <span>Home</span>
+        <svg className={navigation-icon}>
+          <use href="../../assets/icons/navigation-icons.svg#navlink-home"></use>
+        </svg>
+        <span className={buildSpanClassName}>Home</span>
       </NavLink>
-      <NavLink
-        className={buildNavClassName}
-        to={`${ROUTES.DASHBOARD}${ROUTES.STATISTICS}`}
-      >
-        <Icon className="navigation__icon" name="statistics" width={18} height={18} />
-        <span>Statistics</span>
+
+      <NavLink className={buildNavClassName} to={`${ROUTES.DASHBOARD}${ROUTES.STATISTICS}`}>
+        <svg class={navigation-icon}>
+          <use href="../../assets/icons/navigation-icons.svg#navlink-statistics"></use>
+        </svg>
+        <span className={buildSpanClassName}>Statistics</span>
       </NavLink>
+
       <NavLink className={buildNavClassName} to={`${ROUTES.DASHBOARD}${ROUTES.CURRENCY}`}>
-        <Icon className="navigation__icon" name="currency" width={18} height={18} />
-        <span>Currency</span>
+        <svg class={navigation-icon}>
+          <use href="../../assets/icons/navigation-icons.svg#navlink-currency"></use>
+        </svg>
+        <span className={buildSpanClassName}>Currency</span>
       </NavLink>
     </nav>
   );
-}
-
-export default Navigation;
+};
