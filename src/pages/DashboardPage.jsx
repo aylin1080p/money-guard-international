@@ -1,9 +1,8 @@
-import { Outlet } from "react-router-dom";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Outlet } from 'react-router-dom';
 
-import DashboardLayout from "../components/DashboardLayout/DashboardLayout";
-import { fetchDashboardData } from "../store/global/globalSlice";
+import { fetchDashboardData } from '../store/global/globalSlice.js';
 
 function DashboardPage() {
   const dispatch = useDispatch();
@@ -12,11 +11,7 @@ function DashboardPage() {
     dispatch(fetchDashboardData());
   }, [dispatch]);
 
-  return (
-    <DashboardLayout>
-      <Outlet />
-    </DashboardLayout>
-  );
+  return <Outlet />;
 }
 
 export default DashboardPage;
