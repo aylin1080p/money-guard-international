@@ -1,12 +1,70 @@
+/* GENEL KONTEYNER */
 .currency {
-  display: grid;
-  gap: 12px;
+  position: relative;
+  width: 100%;
+  background: rgba(74, 86, 226, 0.1);
+  border-radius: 0; /* Mobilde genelde tam genişlik olur, radius'u 30px yapabilirsin */
+  overflow: hidden;
+  min-height: 180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.currency__title {
-  font-size: 20px;
+/* TABLO AYARLARI */
+.currency__table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+  z-index: 2;
+  font-size: 14px; /* Mobilde biraz daha küçük font */
 }
 
-.currency__text {
-  color: var(--color-text-muted);
+.currency__thead {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.currency__table th {
+  padding: 12px 15px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.currency__table td {
+  padding: 12px 15px;
+  font-weight: 400;
+}
+
+/* DALGA EFEKTİ (MOBİLDE TAM OTURMASI İÇİN) */
+.currency__wave-container {
+  position: absolute;
+  bottom: -1px; /* Boşluk kalmasın diye hafif aşağı çektik */
+  left: 0;
+  width: 100%;
+  height: auto;
+  line-height: 0;
+  z-index: 1;
+}
+
+.currency__wave-svg {
+  width: 100%;
+  height: 80px; /* Mobilde dalga yüksekliğini sabitledik */
+  display: block;
+}
+
+/* --- TABLET VE MASAÜSTÜ İÇİN DÜZELTMELER --- */
+@media screen and (min-width: 768px) {
+  .currency {
+    max-width: 393px; /* Masaüstünde Figma'daki genişliğine döner */
+    border-radius: 30px;
+    margin-top: 20px;
+  }
+
+  .currency__table {
+    font-size: 16px;
+  }
+
+  .currency__wave-svg {
+    height: 93px; /* Büyük ekranlarda dalga biraz daha büyür */
+  }
 }
