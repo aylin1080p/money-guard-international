@@ -1,10 +1,22 @@
+import { useSelector } from 'react-redux';
+import { selectTotalBalance } from '../../store/finance/financeSelectors.js';
 import './Balance.css';
 
 function Balance() {
+  const totalBalance = useSelector(selectTotalBalance);
+  const isLoading = useSelector(state => state.finance?.loading ?? false);
+
+  const formattedBalance = totalBalance.toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
   return (
-    <section className="balance component-placeholder">
+    <section className="balance">
       <p className="balance__label">Your balance</p>
-      <p className="balance__value">$ 0.00</p>
+      <p className="balance__value">
+        {isLoading ? '$ ...' : `$ ${formattedBalance}`}
+      </p>
     </section>
   );
 }

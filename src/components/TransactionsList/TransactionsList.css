@@ -1,4 +1,37 @@
 .transactions-list {
   display: grid;
-  gap: 16px;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0 16px;
+}
+
+.transactions-header {
+  display: grid;
+  grid-template-columns: 100px 60px 160px 1fr 140px 40px 100px;
+  gap: 8px;
+  padding: 16px 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  text-transform: capitalize;
+}
+
+.transactions-empty {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 40px 0;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .transactions-header {
+    display: none;
+  }
+
+  .transactions-list {
+    border-radius: 12px;
+  }
 }

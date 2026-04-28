@@ -5,7 +5,8 @@ const fallbackUser = {
 };
 
 export function getStoredToken() {
-  return localStorage.getItem(storageKeys.token) ?? '';
+  const token = localStorage.getItem(storageKeys.token) ?? '';
+  return token.replace(/^"|"$/g, '');
 }
 
 export function getStoredUser() {
@@ -26,7 +27,6 @@ export function setSession({ token, user }) {
   localStorage.setItem(storageKeys.token, token);
   localStorage.setItem(storageKeys.user, JSON.stringify(user));
 }
-
 export function clearSession() {
   localStorage.removeItem(storageKeys.token);
   localStorage.removeItem(storageKeys.user);

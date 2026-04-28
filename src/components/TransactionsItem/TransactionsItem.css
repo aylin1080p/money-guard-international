@@ -1,4 +1,109 @@
 .transactions-item {
   display: grid;
-  gap: 10px;
+  grid-template-columns: 100px 60px 160px 1fr 140px 40px 100px;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--color-text, #fff);
+  font-size: 14px;
+}
+
+.transactions-item:last-child {
+  border-bottom: none;
+}
+
+.item-date,
+.item-type,
+.item-category,
+.item-comment {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.item-amount {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.item-amount.income {
+  color: #24cca7;
+}
+
+.item-amount.expense {
+  color: #ff6596;
+}
+
+.btn-edit {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  padding: 0;
+}
+
+.btn-edit:hover {
+  opacity: 1;
+}
+
+.btn-delete {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ff9b5e 0%, #ff6596 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.btn-delete:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .transactions-item {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    padding: 12px 8px;
+  }
+
+  .item-date {
+    order: 1;
+  }
+
+  .item-amount {
+    order: 2;
+    text-align: right;
+  }
+
+  .item-category {
+    order: 3;
+  }
+
+  .item-type {
+    order: 4;
+    text-align: right;
+  }
+
+  .item-comment {
+    order: 5;
+    grid-column: 1 / -1;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+  }
+
+  .btn-edit {
+    display: none;
+  }
+
+  .btn-delete {
+    order: 6;
+    grid-column: 1 / -1;
+    width: 100%;
+    text-align: center;
+  }
 }
