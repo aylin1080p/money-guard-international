@@ -11,19 +11,16 @@ function Navigation() {
   return (
     <nav className="navigation">
       <NavLink className={buildNavClassName} to={`${ROUTES.DASHBOARD}${ROUTES.HOME}`}>
-        <Icon className="navigation__icon" name="home" width={18} height={18} />
-        <span>Home</span>
+        <Icon className="navicon" name="home" />
+        <span className="navspan">Home</span>
       </NavLink>
-      <NavLink
-        className={buildNavClassName}
-        to={`${ROUTES.DASHBOARD}${ROUTES.STATISTICS}`}
-      >
-        <Icon className="navigation__icon" name="statistics" width={18} height={18} />
-        <span>Statistics</span>
+      <NavLink className={buildNavClassName} to={`${ROUTES.DASHBOARD}${ROUTES.STATISTICS}`}>
+        <Icon className="navicon" name="statistics" />
+        <span className="navspan">Statistics</span>
       </NavLink>
       <NavLink className={buildNavClassName} to={`${ROUTES.DASHBOARD}${ROUTES.CURRENCY}`}>
-        <Icon className="navigation__icon" name="currency" width={18} height={18} />
-        <span>Currency</span>
+        <Icon className="navicon" name="currency" />
+        <span className="navspan">Currency</span>
       </NavLink>
     </nav>
   );
