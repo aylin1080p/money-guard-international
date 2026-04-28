@@ -9,7 +9,7 @@ export const registerUser = createAsyncThunk(
     try {
       return await authApi.register(credentials);
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response?.data?.message ?? error.message);
     }
   }
 );
@@ -20,7 +20,7 @@ export const loginUser = createAsyncThunk(
     try {
       return await authApi.login(credentials);
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response?.data?.message ?? error.message);
     }
   }
 );
@@ -29,7 +29,7 @@ export const logoutUser = createAsyncThunk('auth/logoutUser', async (_, thunkAPI
   try {
     await authApi.logout();
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(error.response?.data?.message ?? error.message);
   }
 });
 
@@ -46,6 +46,6 @@ export const refreshUser = createAsyncThunk('auth/refreshUser', async (_, thunkA
     return await authApi.fetchCurrentUser();
   } catch (error) {
     clearAuthHeader();
-    return thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(error.response?.data?.message ?? error.message);
   }
 });

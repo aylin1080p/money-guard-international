@@ -66,7 +66,7 @@ function RegistrationForm() {
   const onSubmit = async values => {
     try {
       const payload = {
-        name: values.name,
+        username: values.name,
         email: values.email,
         password: values.password,
       };
