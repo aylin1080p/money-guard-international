@@ -1,43 +1,67 @@
 .currency {
   position: relative;
   width: 100%;
-  max-width: 393px;
+  max-width: 320px;
   min-height: 214px;
   margin: 0 auto;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 0;
   background: rgba(74, 86, 226, 0.1);
   box-shadow: 0 4px 60px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(50px);
 }
 
+/* TABLE */
 .currency__table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
   color: #fbfbfb;
   position: relative;
   z-index: 1;
 }
 
+/* HEADER BACKGROUND */
 .currency__thead {
   background: rgba(255, 255, 255, 0.2);
 }
 
+/* CELLS */
 .currency__table th,
 .currency__table td {
-  padding: 16px 20px;
-  text-align: left;
+  padding: 10px 12px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
+/* HEADER */
 .currency__table th {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 }
 
+/* VALUES */
 .currency__table td {
-  font-size: 16px;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
 }
 
+/* COLUMN WIDTHS */
+.currency__table th:nth-child(1),
+.currency__table td:nth-child(1) {
+  width: 33%;
+}
+
+.currency__table th:nth-child(2),
+.currency__table td:nth-child(2),
+.currency__table th:nth-child(3),
+.currency__table td:nth-child(3) {
+  width: 33%;
+}
+
+/* WAVE */
 .currency__wave-container {
   position: absolute;
   left: 0;
@@ -52,24 +76,41 @@
   height: 93px;
 }
 
+/* ================= MOBILE ================= */
 @media (max-width: 767px) {
   .currency {
-    max-width: none;
-    min-height: 174px;
-    border-radius: 0;
-  }
-
-  .currency__table th,
-  .currency__table td {
-    padding: 12px 16px;
+    max-width: 320px;
+    min-height: 214px;
   }
 
   .currency__table th,
   .currency__table td {
     font-size: 14px;
+    padding: 8px 10px;
   }
 
   .currency__wave-svg {
     height: 79px;
+  }
+}
+
+/* ================= TABLET ================= */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .currency {
+    max-width: 336px;
+    min-height: 214px;
+    position: absolute;
+    top: 80px;
+    left: 400px;
+  }
+}
+
+/* ================= DESKTOP ================= */
+@media (min-width: 1280px) {
+  .currency {
+    max-width: 480px;
+    min-height: 380px;
+    position: absolute;
+    top: 326px;
   }
 }

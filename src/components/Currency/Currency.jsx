@@ -11,7 +11,8 @@ const FALLBACK_DATA = [
 ];
 
 const formatRate = value => Number(value ?? 0).toFixed(2);
-const getCurrencyLabel = code => (code === 840 ? 'USD' : code === 978 ? 'EUR' : String(code));
+const getCurrencyLabel = code =>
+  code === 840 ? 'USD' : code === 978 ? 'EUR' : String(code);
 
 function Currency() {
   const dispatch = useDispatch();
@@ -47,12 +48,28 @@ function Currency() {
       </table>
 
       <div className="currency__wave-container" aria-hidden="true">
-        <svg className="currency__wave-svg" viewBox="0 0 280 93" preserveAspectRatio="none">
+        <svg
+          className="currency__wave-svg"
+          viewBox="0 0 280 93"
+          preserveAspectRatio="none"
+        >
+          {/* dalga */}
           <path
             d="M0 93L0 42.4331C39.5113 22.181 83.2173 22.0163 122.956 41.9856C162.738 61.9765 206.495 61.8021 246.044 41.5204L280 24.1132V93H0Z"
             fill="white"
             fillOpacity="0.2"
           />
+
+         {/* pembe çizgi */}
+<path
+  d="M0 42.4331C39.5113 22.181 83.2173 22.0163 122.956 41.9856C162.738 61.9765 206.495 61.8021 246.044 41.5204L280 24.1132"
+  fill="none"
+  stroke="#FF4DA6"
+  strokeWidth="3"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  transform="translate(0, -1)"
+/>
         </svg>
       </div>
     </section>
