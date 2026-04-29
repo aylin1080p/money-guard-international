@@ -1,4 +1,104 @@
 .statistics-table {
-  display: grid;
-  gap: 16px;
+  background: var(--bg-glass);
+  backdrop-filter: var(--backdrop-blur-glass);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  padding-bottom: 16px;
+}
+
+.statistics-table__empty {
+  color: var(--color-text-muted);
+  font-size: 16px;
+  text-align: center;
+  padding: 32px 20px;
+  margin: 0;
+}
+
+.statistics-table__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.statistics-table__list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  max-height: 280px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.statistics-table__list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.statistics-table__list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.statistics-table__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.statistics-table__row:last-child {
+  border-bottom: none;
+}
+
+.statistics-table__color {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.statistics-table__name {
+  flex: 1;
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.statistics-table__total {
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.statistics-table__totals {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 8px;
+}
+
+.statistics-table__total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.statistics-table__total-row--expense {
+  color: var(--color-danger);
+}
+
+.statistics-table__total-row--income {
+  color: var(--color-accent);
 }

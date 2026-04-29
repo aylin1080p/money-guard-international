@@ -1,13 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchCurrency, fetchTransactions } from './financeOperations.js';
-
-export const financeInitialState = {
-  transactions: [],
-  totalBalance: 0,
-  categoriesSummary: [],
-  currency: [],
-};
+import {
+  fetchCategories,
+  fetchCurrency,
+  fetchTransactions,
+} from './financeOperations.js';
 
 const getAmount = transaction =>
   Number(transaction?.amount ?? transaction?.transactionAmount ?? 0);
@@ -18,14 +15,17 @@ const isIncome = transaction => {
 };
 
 const calculateTotalBalance = transactions =>
-  transactions.reduce((total, transaction) => {
-    const amount = getAmount(transaction);
-    return isIncome(transaction) ? total + amount : total - amount;
-  }, 0);
+  transactions.reduce((total, t) => total + getAmount(t), 0);
 
 const financeSlice = createSlice({
   name: 'finance',
-  initialState: financeInitialState,
+  initialState: {
+    transactions: [],
+    totalBalance: 0,
+    categoriesSummary: [],
+    currency: [],
+    categories: [],
+  },
   reducers: {},
   extraReducers: builder => {
     builder
@@ -35,6 +35,9 @@ const financeSlice = createSlice({
       })
       .addCase(fetchCurrency.fulfilled, (state, action) => {
         state.currency = action.payload;
+      })
+      .addCase(fetchCategories.fulfilled, (state, action) => {
+        state.categories = action.payload;
       });
   },
 });

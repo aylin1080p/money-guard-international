@@ -1,4 +1,273 @@
 .add-transaction-form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.add-transaction-form__title {
+  color: var(--color-text);
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 4px;
+}
+
+/* Toggle */
+.add-transaction-form__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 16px;
+}
+
+.add-transaction-form__toggle-btn {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color var(--transition-default);
+}
+
+.add-transaction-form__toggle-btn--active.add-transaction-form__toggle-btn--income {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.add-transaction-form__toggle-btn--active.add-transaction-form__toggle-btn--expense {
+  color: #ff6500;
+  font-weight: 700;
+}
+
+.add-transaction-form__toggle-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+.add-transaction-form__toggle-knob {
+  position: absolute;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  transition: left var(--transition-default), background var(--transition-default);
+}
+
+.add-transaction-form__toggle-knob--expense {
+  left: 3px;
+  background: #ff6500;
+}
+
+.add-transaction-form__toggle-knob--income {
+  left: 23px;
+  background: var(--color-accent);
+}
+
+/* Fields */
+.add-transaction-form__field {
+  position: relative;
+  width: 100%;
+}
+
+.add-transaction-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.add-transaction-form__input {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: 16px;
+  transition: border-color var(--transition-default);
+  box-sizing: border-box;
+}
+
+.add-transaction-form__input::placeholder {
+  color: var(--color-input-text);
+}
+
+.add-transaction-form__input:focus {
+  outline: none;
+  border-bottom-color: var(--color-accent);
+}
+
+.add-transaction-form__input--error {
+  border-bottom-color: var(--color-danger);
+}
+
+.add-transaction-form__input--comment {
+  padding-left: 32px;
+}
+
+.add-transaction-form__field-icon {
+  position: absolute;
+  left: 6px;
+  top: 13px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+/* Select */
+.add-transaction-form__select {
+  width: 100%;
+  height: 44px;
+  padding: 0 32px 0 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: 16px;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color var(--transition-default);
+  box-sizing: border-box;
+}
+
+.add-transaction-form__select:focus {
+  outline: none;
+  border-bottom-color: var(--color-accent);
+}
+
+.add-transaction-form__select--error {
+  border-bottom-color: var(--color-danger);
+}
+
+.add-transaction-form__select option {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.add-transaction-form__select-icon {
+  position: absolute;
+  right: 8px;
+  top: 14px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+/* Datepicker */
+.add-transaction-form__datepicker-wrapper {
+  width: 100%;
+  display: block;
+}
+
+.add-transaction-form__datepicker {
+  padding-right: 32px !important;
+}
+
+.add-transaction-form__calendar-icon {
+  position: absolute;
+  right: 8px;
+  top: 13px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+/* react-datepicker dark theme overrides */
+.add-transaction-form__calendar.react-datepicker {
+  background: var(--color-surface) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 16px !important;
+}
+
+.add-transaction-form__calendar .react-datepicker__header {
+  background: var(--color-surface-alt) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.add-transaction-form__calendar .react-datepicker__current-month,
+.add-transaction-form__calendar .react-datepicker__day-name {
+  color: var(--color-text) !important;
+}
+
+.add-transaction-form__calendar .react-datepicker__day {
+  color: var(--color-text) !important;
+  border-radius: 50% !important;
+}
+
+.add-transaction-form__calendar .react-datepicker__day:hover {
+  background: rgba(36, 204, 167, 0.3) !important;
+}
+
+.add-transaction-form__calendar .react-datepicker__day--selected,
+.add-transaction-form__calendar .react-datepicker__day--keyboard-selected {
+  background: var(--color-accent) !important;
+  color: #000 !important;
+}
+
+.add-transaction-form__calendar .react-datepicker__day--disabled {
+  color: var(--color-text-muted) !important;
+}
+
+/* Error */
+.add-transaction-form__error {
+  color: var(--color-danger);
+  font-size: 12px;
+  margin: 4px 0 0;
+}
+
+/* Actions */
+.add-transaction-form__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.add-transaction-form__submit {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-gradient);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: opacity var(--transition-default), transform var(--transition-default);
+}
+
+.add-transaction-form__submit:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.add-transaction-form__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.add-transaction-form__cancel {
+  width: 100%;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background var(--transition-default);
+}
+
+.add-transaction-form__cancel:hover {
+  background: rgba(255, 255, 255, 0.08);
 }

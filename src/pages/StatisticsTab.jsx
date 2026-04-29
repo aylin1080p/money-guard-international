@@ -6,8 +6,8 @@ import './StatisticsTab.css';
 function StatisticsTab() {
   return (
     <section className="statistics-tab">
-      <Chart />
       <StatisticsDashboard />
+      <Chart />
       <StatisticsTable />
     </section>
   );

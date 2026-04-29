@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import { fetchCurrency, fetchTransactions } from '../finance/financeOperations.js';
+import { fetchCategories, fetchCurrency, fetchTransactions } from '../finance/financeOperations.js';
 
 export const globalInitialState = {
   isLoading: false,
@@ -8,6 +8,7 @@ export const globalInitialState = {
   isLogoutModalOpen: false,
   isAddTransactionModalOpen: false,
   isEditTransactionModalOpen: false,
+  editingTransaction: null,
   isMobileMenuOpen: false,
 };
 
@@ -17,6 +18,7 @@ export const fetchDashboardData = createAsyncThunk(
     await Promise.all([
       thunkAPI.dispatch(fetchTransactions()).unwrap(),
       thunkAPI.dispatch(fetchCurrency()).unwrap(),
+      thunkAPI.dispatch(fetchCategories()),
     ]);
 
     return true;
@@ -39,11 +41,13 @@ const globalSlice = createSlice({
     closeAddTransactionModal(state) {
       state.isAddTransactionModalOpen = false;
     },
-    openEditTransactionModal(state) {
+    openEditTransactionModal(state, action) {
       state.isEditTransactionModalOpen = true;
+      state.editingTransaction = action.payload ?? null;
     },
     closeEditTransactionModal(state) {
       state.isEditTransactionModalOpen = false;
+      state.editingTransaction = null;
     },
     openMobileMenu(state) {
       state.isMobileMenuOpen = true;

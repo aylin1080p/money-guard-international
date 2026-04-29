@@ -13,6 +13,7 @@ import {
 import { authReducer } from './auth/authSlice.js';
 import { financeReducer } from './finance/financeSlice.js';
 import globalReducer from './global/globalSlice.js';
+import { statisticsReducer } from './statistics/statisticsSlice.js';
 import { authPersistConfig } from './persistConfig.js';
 
 export const store = configureStore({
@@ -20,6 +21,7 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     finance: financeReducer,
     global: globalReducer,
+    statistics: statisticsReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
