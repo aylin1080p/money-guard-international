@@ -33,3 +33,9 @@ dist-ssr
 
 
 
+
+# Debug/test screenshots
+*.png
+*.jpeg
+*.jpg
+
