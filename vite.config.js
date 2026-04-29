@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: command === 'build' ? '/goit-js-hw-12/' : '/',
+  base: command === 'build' ? '/money-guard-international/' : '/',
 }));
