@@ -1,7 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="icon-logo" viewBox="0 0 32 32">
-    <path d="M16 2l12 7v14l-12 7-12-7V9l12-7z" fill="currentColor" />
-    <path d="M16 9l5 3v6l-5 3-5-3v-6l5-3z" fill="#fff" opacity=".35" />
+  <symbol id="icon-logo" viewBox="0 0 14 17">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.69101 1.81702C8.47967 1.51418 7.26833 0.908508 6.35982 0C5.45131 0.908508 4.23997 1.51418 3.02863 1.81702C3.33146 4.54254 4.23997 6.35955 6.35982 7.87373C8.47967 6.35955 9.69101 4.54254 9.69101 1.81702Z" fill="#FFC727"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.47953 13.0925L0.00012207 3.09888V7.94425L6.66251 15.5151L8.47953 13.0925Z" fill="#FBFBFB"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.3881 12.1841L13.0221 7.94439V3.40186L7.26825 10.0642L9.3881 12.1841Z" fill="#FBFBFB"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.69092 13.6986V16.4241L13.0221 12.4872V9.76172L9.69092 13.6986Z" fill="#FBFBFB"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.33132 13.6986L0.00012207 9.76172V12.4872L3.33132 16.4241V13.6986Z" fill="#FBFBFB"/>
   </symbol>
   <symbol id="icon-home" viewBox="0 0 38 38">
             <path clip-rule="evenodd" d="M6 0C2.6863 0 0 2.6863 0 6v26c0 3.3137 2.6863 6 6 6h26c3.3137 0 6-2.6863 6-6V6c0-3.3137-2.6863-6-6-6zM15.9333 21.3594v8.1961H9.1V18.6274H5L18.6667 6.3332 32.3333 18.6274h-4.1v10.9281H21.4v-8.1961z" fill-rule="evenodd" />

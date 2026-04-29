@@ -1,3 +1,30 @@
 .chart {
-  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  min-height: 220px;
+}
+
+.chart--empty {
+  min-height: 220px;
+}
+
+.chart__canvas-wrapper {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.chart__empty-text {
+  color: var(--color-text-muted);
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .chart__canvas-wrapper {
+    max-width: 320px;
+  }
 }

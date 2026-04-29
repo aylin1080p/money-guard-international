@@ -2,3 +2,15 @@
   display: grid;
   gap: 24px;
 }
+
+@media (min-width: 768px) {
+  .statistics-tab {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    align-items: start;
+  }
+
+  .statistics-tab > .statistics-dashboard {
+    grid-column: 1 / -1;
+  }
+}
