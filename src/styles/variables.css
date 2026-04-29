@@ -7,6 +7,10 @@
   --color-text: #fbfbfb;
   --color-text-muted: rgba(255, 255, 255, 0.6);
   --color-accent: #24cca7;
+  --color-income: #24cca7;
+  --color-expense: #ff6596;
+  --color-white-10: rgba(255, 255, 255, 0.1);
+  --color-white-60: rgba(255, 255, 255, 0.6);
   --color-accent-secondary: #4a56e2;
   --color-danger: #ff6596;
   --color-warning: #ffb627;

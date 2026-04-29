@@ -5,3 +5,4 @@ export const selectIsAddTransactionModalOpen =
 export const selectIsEditTransactionModalOpen =
   state => state.global?.isEditTransactionModalOpen ?? false;
 export const selectIsMobileMenuOpen = state => state.global?.isMobileMenuOpen ?? false;
+export const selectEditingTransaction = state => state.global?.editingTransaction ?? null;

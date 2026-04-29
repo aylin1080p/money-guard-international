@@ -22,6 +22,10 @@
   overflow: hidden;
 }
 
+.navigation__link:hover .navicon {
+  opacity: 0.75;
+}
+
 .navigation__link--active .navicon {
   opacity: 1;
   fill: #734aef;
@@ -53,6 +57,10 @@
     font-weight: 400;
     font-size: 18px;
     color: #fbfbfb;
+  }
+
+  .navigation__link:hover .navspan {
+    color: var(--color-accent);
   }
 
   .navigation__link--active .navspan {
