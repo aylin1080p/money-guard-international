@@ -1,4 +1,4 @@
-export const iconSpritePath = '/src/assets/icons/sprite.svg';
+export const iconSpritePath = '../../public/sprite.svg';
 
 export const backgroundAssets = {
   authMobile: '/src/assets/images/backgrounds/auth-mobile-placeholder.svg',
@@ -14,3 +14,4 @@ export const authSectionAssets = {
   cardFillPrimary: '/src/assets/images/auth/auth-card-fill-336x88-718b64.svg',
   headerUserIcon: '/src/assets/icons/raw/header-user-icon-24x24.svg',
 };
+
