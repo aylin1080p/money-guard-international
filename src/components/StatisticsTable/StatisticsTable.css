@@ -102,3 +102,20 @@
 .statistics-table__total-row--income {
   color: var(--color-accent);
 }
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .statistics-table {
+    border-radius: 24px;
+  }
+
+  .statistics-table__header,
+  .statistics-table__row,
+  .statistics-table__totals {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .statistics-table__list {
+    max-height: 360px;
+  }
+}
