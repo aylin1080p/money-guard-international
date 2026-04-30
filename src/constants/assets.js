@@ -1,4 +1,4 @@
-export const iconSpritePath = '/sprite.svg';
+export const iconSpritePath = `${import.meta.env.BASE_URL}sprite.svg`;
 
 export const backgroundAssets = {
   authMobile: '/src/assets/images/backgrounds/auth-mobile-placeholder.svg',
