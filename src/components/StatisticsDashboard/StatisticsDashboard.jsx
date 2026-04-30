@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { selectIsLoggedIn, selectIsRefreshing } from '../../store/auth/authSelectors.js';
 import { fetchStatistics } from '../../store/statistics/statisticsOperations.js';
 import {
   selectStatisticsMonth,
@@ -32,10 +33,14 @@ function StatisticsDashboard() {
   const dispatch = useDispatch();
   const month = useSelector(selectStatisticsMonth);
   const year = useSelector(selectStatisticsYear);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
-    dispatch(fetchStatistics({ month, year }));
-  }, [dispatch, month, year]);
+    if (isLoggedIn && !isRefreshing) {
+      dispatch(fetchStatistics({ month, year }));
+    }
+  }, [dispatch, month, year, isLoggedIn, isRefreshing]);
 
   const handleMonthChange = e => dispatch(setSelectedMonth(Number(e.target.value)));
   const handleYearChange = e => dispatch(setSelectedYear(Number(e.target.value)));

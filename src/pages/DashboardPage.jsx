@@ -1,15 +1,20 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 
+import { selectIsLoggedIn, selectIsRefreshing } from '../store/auth/authSelectors.js';
 import { fetchDashboardData } from '../store/global/globalSlice.js';
 
 function DashboardPage() {
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
-    dispatch(fetchDashboardData());
-  }, [dispatch]);
+    if (isLoggedIn && !isRefreshing) {
+      dispatch(fetchDashboardData());
+    }
+  }, [dispatch, isLoggedIn, isRefreshing]);
 
   return <Outlet />;
 }
