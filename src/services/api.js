@@ -1,19 +1,21 @@
 import axios from 'axios';
-
 import { env } from '../config/env.js';
 
 export const api = axios.create({
   baseURL: env.apiBaseUrl,
 });
 
+let authToken = null;
+
+export const setAuthToken = (token) => {
+  authToken = token;
+};
+
 api.interceptors.request.use(config => {
-  const nextConfig = { ...config };
-
-  if (!nextConfig.headers) {
-    nextConfig.headers = {};
+  if (authToken) {
+    config.headers.Authorization = `Bearer ${authToken}`;
   }
-
-  return nextConfig;
+  return config;
 });
 
 export const setAuthHeader = token => {

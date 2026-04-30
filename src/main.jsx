@@ -8,7 +8,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import App from './app/App.jsx';
 import { store, persistor } from './store/index.js';
+import { setAuthToken } from './services/api.js';
 import './index.css';
+
+store.subscribe(() => {
+  const token = store.getState().auth.token;
+  setAuthToken(token);
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
