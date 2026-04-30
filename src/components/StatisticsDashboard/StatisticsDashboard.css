@@ -43,3 +43,14 @@
   color: var(--color-text-muted);
   pointer-events: none;
 }
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .statistics-dashboard {
+    gap: 20px;
+  }
+
+  .statistics-dashboard__select-wrapper {
+    flex: 0 1 180px;
+    min-width: 180px;
+  }
+}

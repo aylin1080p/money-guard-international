@@ -26,6 +26,8 @@ export const fetchCurrency = createAsyncThunk(
   'finance/fetchCurrency',
   async (_, thunkAPI) => {
     try {
+      const existing = thunkAPI.getState().finance.currency;
+      if (existing && existing.length > 0) return existing;
       return await fetchUsdEuroValues();
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

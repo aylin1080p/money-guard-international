@@ -7,8 +7,32 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import App from './app/App.jsx';
+import { clearAuthHeader, setAuthHeader } from './services/api.js';
 import { store, persistor } from './store/index.js';
 import './index.css';
+
+let previousToken = store.getState().auth?.token ?? null;
+
+if (previousToken) {
+  setAuthHeader(previousToken);
+}
+
+store.subscribe(() => {
+  const nextToken = store.getState().auth?.token ?? null;
+
+  if (nextToken === previousToken) {
+    return;
+  }
+
+  previousToken = nextToken;
+
+  if (nextToken) {
+    setAuthHeader(nextToken);
+    return;
+  }
+
+  clearAuthHeader();
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
